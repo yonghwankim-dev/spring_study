@@ -4,3 +4,6 @@
 2. [\[Spring\]\[IoC\] 의존성 주입(Dependency Injection)](https://yonghwankim-dev.tistory.com/501)
 3. [\[spring\]\[IoC\] ApplicationContext와 다양한 빈 설정](https://yonghwankim-dev.tistory.com/509)
 4. [\[Spring\]\[IoC\] @Autowired 어노테이션](https://yonghwankim-dev.tistory.com/512)
+5. [\[Spring\]\[IoC\] @Component와 컴포넌트 스캔]
+6. [\[Spring\]\[IoC\] 빈(Bean)의 스코프](https://yonghwankim-dev.tistory.com/513)
+
