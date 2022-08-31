@@ -18,6 +18,16 @@ public class BookService implements BeanPostProcessor {
     @Qualifier("yongHwanBookRepository")
     BookRepository bookRepository;
 
+    @Autowired
+    public BookService(BookRepository bookRepository) {
+        this.bookRepository = bookRepository;
+    }
+
+    @Autowired
+    public void setBookRepository(BookRepository bookRepository) {
+        this.bookRepository = bookRepository;
+    }
+
     // 주입 경우의 수 3 : 해당 타입의 빈 모두 주입받기
     @Autowired
     List<BookRepository> bookRepositories;
@@ -25,6 +35,8 @@ public class BookService implements BeanPostProcessor {
     // 주입 방법 중 하나 : 이름을 맞춰서 주입
     @Autowired
     BookRepository myBookRepository;
+
+
 
     // 빈이 이미 등록된후 수행되는 처리기
     @PostConstruct
