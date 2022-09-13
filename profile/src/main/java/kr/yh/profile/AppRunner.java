@@ -15,8 +15,8 @@ public class AppRunner implements ApplicationRunner {
     @Autowired
     ApplicationContext ctx;
 
-    @Autowired
-    TestBookRepository testBookRepository;
+//    @Autowired
+//    TestBookRepository testBookRepository;
 
     @Autowired
     BookRepository bookRepository;
