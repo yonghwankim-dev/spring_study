@@ -8,5 +8,6 @@
 6. [\[Spring\]\[IoC\] 빈(Bean)의 스코프](https://yonghwankim-dev.tistory.com/513)
 7. [\[Spring\]\[IoC\] Environment, 프로파일 및 프로퍼티](https://yonghwankim-dev.tistory.com/514)
 8. [\[Spring\]\[IoC\] MessageSource](https://yonghwankim-dev.tistory.com/519)
+9. [\[Spring\]\[IoC\] ApplicationEventPublisher](https://yonghwankim-dev.tistory.com/521)
 
 
