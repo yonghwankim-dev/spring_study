@@ -31,5 +31,17 @@ public class AppRunner implements ApplicationRunner {
         String s = Files.readString(Path.of(resource1.getURI()));
         System.out.println(s);
 
+
+        // applicationContext의 타입 확인
+        Resource resource3 = applicationContext.getResource("classpath:test.txt");
+        System.out.println(applicationContext.getClass()); // class org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext
+        System.out.println(resource3); // class path resource [test.txt]
+
+        // classpath 접두어 없이 리소스 타입 확인
+        Resource resource4 = applicationContext.getResource("test.txt");
+        System.out.println(resource4); // ServletContext resource [/test.txt]
+        System.out.println(resource4.exists()); // false
+
+
     }
 }
