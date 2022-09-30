@@ -4,9 +4,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.support.FileSystemXmlApplicationContext;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.ResourceLoader;
 import org.springframework.stereotype.Component;
+import org.springframework.web.context.WebApplicationContext;
 
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -20,17 +24,18 @@ public class AppRunner implements ApplicationRunner {
     @Autowired
     ApplicationContext applicationContext;
 
+
+
     @Override
     public void run(ApplicationArguments args) throws Exception {
         Resource resource1 = resourceLoader.getResource("classpath:test.txt");
         Resource resource2 = applicationContext.getResource("classpath:test.txt");
 
-        System.out.println(resource1.exists());
-        System.out.println(resource2.exists());
+        System.out.println(resource1.exists()); // true
+        System.out.println(resource2.exists()); // true
 
         String s = Files.readString(Path.of(resource1.getURI()));
-        System.out.println(s);
-
+        System.out.println(s); // hello test.txt
 
         // applicationContext의 타입 확인
         Resource resource3 = applicationContext.getResource("classpath:test.txt");
@@ -39,8 +44,10 @@ public class AppRunner implements ApplicationRunner {
 
         // classpath 접두어 없이 리소스 타입 확인
         Resource resource4 = applicationContext.getResource("test.txt");
-        System.out.println(resource4); // ServletContext resource [/test.txt]
+        System.out.println(resource4);          // ServletContext resource [/test.txt]
         System.out.println(resource4.exists()); // false
+
+
 
 
     }
