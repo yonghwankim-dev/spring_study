@@ -10,5 +10,7 @@
 8. [\[Spring\]\[IoC\] MessageSource](https://yonghwankim-dev.tistory.com/519)
 9. [\[Spring\]\[IoC\] ApplicationEventPublisher](https://yonghwankim-dev.tistory.com/521)
 10. [\[Spring\] Resource 인터페이스와 Resource 인터페이스 구현체](https://yonghwankim-dev.tistory.com/522)
+11. [\[Spring\] ResourceLoader 인터페이스](https://yonghwankim-dev.tistory.com/524)
+
 
 
