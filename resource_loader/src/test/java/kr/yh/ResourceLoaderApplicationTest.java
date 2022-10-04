@@ -5,25 +5,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.context.support.FileSystemXmlApplicationContext;
-import org.springframework.context.support.GenericApplicationContext;
 import org.springframework.core.io.Resource;
-import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
-import org.springframework.core.io.support.ResourcePatternResolver;
+import org.springframework.core.io.ResourceLoader;
 import org.springframework.web.context.WebApplicationContext;
-import org.springframework.web.context.support.GenericWebApplicationContext;
 
-import javax.servlet.ServletContext;
-
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.Arrays;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
 public class ResourceLoaderApplicationTest {
@@ -36,6 +27,9 @@ public class ResourceLoaderApplicationTest {
     private FileSystemXmlApplicationContext fileSystemCtx;
     @Autowired
     private WebApplicationContext webCtx;
+
+    @Autowired
+    private ResourceLoader resourceLoader;
 
     @Test
     public void getResource(){
@@ -109,5 +103,30 @@ public class ResourceLoaderApplicationTest {
             String content = Files.readString(Path.of(resource.getURI()));
             System.out.println(content);
         }
+    }
+
+    @Test
+    public void resourceLoaderAwareTest() throws IOException {
+        //given
+        ApplicationContext ctx = new AnnotationConfigApplicationContext(ApplicationContextConfiguration.class);
+        //when
+        ResourceLoaderAwareImpl resourceLoaderAware = ctx.getBean(ResourceLoaderAwareImpl.class);
+        Resource resource = resourceLoaderAware.getResource("test.txt");
+        String content = Files.readString(Path.of(resource.getURI()));
+        //then
+        System.out.println(content);
+
+    }
+
+    @Test
+    public void resourceLoaderAware_Without_Test() throws IOException {
+        //given
+        ApplicationContext ctx = new AnnotationConfigApplicationContext(ApplicationContextConfiguration.class);
+        //when
+        ResourceLoaderService resourceLoaderAware = ctx.getBean(ResourceLoaderService.class);
+        Resource resource = resourceLoaderAware.getResource("test.txt");
+        String content = Files.readString(Path.of(resource.getURI()));
+        //then
+        System.out.println(content);
     }
 }

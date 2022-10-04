@@ -4,8 +4,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.context.support.FileSystemXmlApplicationContext;
 import org.springframework.stereotype.Component;
-import org.springframework.web.context.WebApplicationContext;
-import org.springframework.web.context.support.XmlWebApplicationContext;
 
 @Component
 public class ApplicationContextConfiguration {
@@ -19,4 +17,15 @@ public class ApplicationContextConfiguration {
         return new FileSystemXmlApplicationContext();
     }
 
+    @Bean
+    public ResourceLoaderAwareImpl resourceLoaderAwareImpl(){
+        ResourceLoaderAwareImpl resourceLoaderAwareImpl = new ResourceLoaderAwareImpl();
+        resourceLoaderAwareImpl.setResourceLoader(new ClassPathXmlApplicationContext());
+        return resourceLoaderAwareImpl;
+    }
+
+    @Bean
+    public ResourceLoaderService resourceLoaderAwareImpl2(){
+        return new ResourceLoaderService(new ClassPathXmlApplicationContext());
+    }
 }
