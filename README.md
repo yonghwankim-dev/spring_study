@@ -12,6 +12,7 @@
 10. [\[Spring\] Resource 인터페이스와 Resource 인터페이스 구현체](https://yonghwankim-dev.tistory.com/522)
 11. [\[Spring\] ResourceLoader 인터페이스](https://yonghwankim-dev.tistory.com/524)
 12. [\[Spring\] ResourcePatternResolver 인터페이스](https://yonghwankim-dev.tistory.com/525)
+13. [\[Spring\] ResourceLoaderAware 인터페이스](https://yonghwankim-dev.tistory.com/526)
 
 
 
