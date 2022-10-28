@@ -1,5 +1,6 @@
 package kr.yh;
 
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.ApplicationArguments;
@@ -15,10 +16,9 @@ import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
 import java.util.Arrays;
 
 @Component
+@AllArgsConstructor
 public class AppRunner implements ApplicationRunner {
-
-    @Autowired
-    private Validator validator;
+    private final Validator validator;
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
