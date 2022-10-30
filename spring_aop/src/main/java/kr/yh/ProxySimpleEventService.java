@@ -19,7 +19,7 @@ public class ProxySimpleEventService implements EventService{
         long begin = System.currentTimeMillis();
         eventService.createEvent();
         long end = System.currentTimeMillis() - begin;
-        System.out.print(Math.round(end));
+        System.out.println(Math.round(end));
     }
 
     @Override
