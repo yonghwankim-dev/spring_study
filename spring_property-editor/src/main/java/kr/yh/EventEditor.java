@@ -18,6 +18,4 @@ public class EventEditor extends PropertyEditorSupport {
     public void setAsText(String text) throws IllegalArgumentException {
         setValue(new Event(Long.parseLong(text)));
     }
-
-
 }
