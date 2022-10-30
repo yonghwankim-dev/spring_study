@@ -13,6 +13,12 @@
 11. [\[Spring\] ResourceLoader 인터페이스](https://yonghwankim-dev.tistory.com/524)
 12. [\[Spring\] ResourcePatternResolver 인터페이스](https://yonghwankim-dev.tistory.com/525)
 13. [\[Spring\] ResourceLoaderAware 인터페이스](https://yonghwankim-dev.tistory.com/526)
+14. [\[Spring\] Validation 추상화\](https://yonghwankim-dev.tistory.com/535)
+15. [\[Spring\] 데이터 바인딩 추상화 : PropertyEditor\](https://yonghwankim-dev.tistory.com/536)
+16. [\[Spring\] 데이터 바인딩 추상화 : Converter와 Formatter\](https://yonghwankim-dev.tistory.com/537)
+
+
+
 
 
 
