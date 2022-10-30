@@ -18,6 +18,8 @@
 16. [\[Spring\] 데이터 바인딩 추상화 : Converter와 Formatter](https://yonghwankim-dev.tistory.com/537)
 17. [\[Spring\] Spring Expression Language](https://yonghwankim-dev.tistory.com/538)
 18. [\[Spring\] Spring AOP(Aspect-Oriented Programming) 개념](https://yonghwankim-dev.tistory.com/539)
+19. [\[Spring\] 프록시 기반 AOP](https://yonghwankim-dev.tistory.com/540)
+
 
 
 
