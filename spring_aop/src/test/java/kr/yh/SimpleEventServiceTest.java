@@ -5,6 +5,7 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.io.ByteArrayOutputStream;
@@ -17,6 +18,10 @@ public class SimpleEventServiceTest {
     @Autowired
     private EventService eventService;
 
+    @Qualifier("simpleEventService")
+    @Autowired
+    private EventService eventService2;
+
     @Test
     public void testCreatedEvent(){
         eventService.createEvent();
@@ -25,5 +30,11 @@ public class SimpleEventServiceTest {
     @Test
     public void testPublishedEvent(){
         eventService.publishEvent();
+    }
+
+    @Test
+    public void testPerfAspect(){
+        eventService2.createEvent();
+        eventService2.publishEvent();
     }
 }
